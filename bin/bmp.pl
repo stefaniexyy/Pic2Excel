@@ -1,11 +1,8 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-use DBI;
-use DBD::Oracle;
-use 5.010;
 use lib './libary';
-use JSON;
+use 5.010;
 use Excel::Writer::XLSX;
 
 #                              _.._        ,----------------------.
@@ -291,10 +288,6 @@ SWITCH:{
     $pixel==1 && do{bmp_24_bit($ARGV[0],$offset,$width,$height);last SWITCH};
     die "error pixel error!\n";
 }
-#bmp_24_bit($ARGV[0],$offset,$width,$height);
-#bmp_256c_8bit($ARGV[0],$offset,($head_size+14),$width,$height);
-#bmp_1bit_2c($ARGV[0],$offset,($head_size+14),$width,$height);
-#bmp_16c_4bit($ARGV[0],$offset,($head_size+14),$width,$height);
 __END__
 =pod
 
@@ -304,11 +297,11 @@ __END__
 
 =head1 Description
 
-    Swich a picture to a microsoft excel using pixel
+    Swich a picture to a microsoft excel by pixel
 
     bmp.pl xxx.bmp and get result xxx.xlsx
 
 =head1 Update list
 
     20171130 now support bmp 24 bit ture color
-    20171208 now support all windows bmp format
+    20171208 now support all windows bmp format(24bit 8bit 4bit 1bit)
